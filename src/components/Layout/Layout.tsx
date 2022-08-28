@@ -1,11 +1,13 @@
-import Job from '../Job';
+import Card from '../Card';
 import { Container } from '@chakra-ui/react';
 
 const Layout = () => {
   return (
-    <Container minW={['90%', '90%', '90%', '70%']}>
-      <Job />
-    </Container>
+    <>
+      <Container minW={['90%', '90%', '90%', '70%']}>
+        <Card />
+      </Container>
+    </>
   );
 };
 
