@@ -3,9 +3,11 @@ import LangButton from './Button/LangButton';
 
 interface Props {
   languages: string[];
+  borderRadius: string;
+  borderWidth: string;
 }
 
-const Filters = ({ languages }: Props) => {
+const Filters = ({ languages, borderRadius, borderWidth }: Props) => {
   console.log(languages);
   return (
     <Box translateY={'-40px'}>
@@ -13,8 +15,8 @@ const Filters = ({ languages }: Props) => {
         gap={[4, 4, 10, 10]}
         px={10}
         py={['8', '8', '4', '4']}
-        borderRadius={'lg'}
-        borderWidth='1px'
+        borderRadius={borderRadius}
+        borderWidth={borderWidth}
         bgGradient='-webkit-box-shadow: 0px 7px 10px -2px rgba(0,0,0,0.47);
               box-shadow: 0px 7px 10px -2px rgba(0,0,0,0.47);'
         alignItems={'center'}

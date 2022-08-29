@@ -1,6 +1,6 @@
 import React from 'react';
 import { Flex, Button, Image } from '@chakra-ui/react';
-import IconRemove from '../../svg/icon-remove.svg';
+import IconRemove from '../../Icons/icon-remove.svg';
 
 interface Props {
   languages: string[];
@@ -24,14 +24,17 @@ const LangButton: React.FC<Props> = ({ languages }) => {
               bgColor={'hsl(180, 31%, 95%)'}
               color={'hsl(180, 29%, 50%)'}
               onClick={handleClick}
-              borderRadius={'lg'}>
+              borderEndRadius={'none'}
+              borderStartRadius={'0.5rem'}>
               {lang}
             </Button>
             <Flex
               bgColor={'hsl(180, 29%, 50%)'}
               width={'2.5rem'}
               justifyContent='center'
-              alignItems={'center'}>
+              alignItems={'center'}
+              borderEndRadius={'0.5rem'}
+              borderStartRadius={'none'}>
               <Image src={IconRemove} width={'20px'} />
             </Flex>
           </Flex>

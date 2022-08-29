@@ -26,7 +26,13 @@ const Card = () => {
   return (
     <Flex rowGap={[10, 10, 4, 4]} py={[10, 10, 6, 6]} flexDirection={'column'}>
       {/* Filter Component Start */}
-      {language.length > 0 && <Filters languages={language} />}
+      {language.length > 0 && (
+        <Filters
+          languages={language}
+          borderRadius={'1rem'}
+          borderWidth={'1rem'}
+        />
+      )}
 
       {/* Filter Component End */}
 
@@ -58,34 +64,36 @@ const Card = () => {
                   />
                 </Box>
                 <Flex flexDirection='column'>
-                  <Flex alignItems={'center'} gap={6}>
+                  <Flex alignItems={'center'} gap={4}>
                     <Text fontSize='md' as='b' color={'hsl(180, 29%, 50%)'}>
                       {item.company}
                     </Text>
-                    {item.new && (
-                      <Text
-                        fontSize={'12px'}
-                        bgColor={'hsl(180, 29%, 50%)'}
-                        borderRadius={'2xl'}
-                        py={'0.8'}
-                        px={'1.5'}
-                        fontWeight={'semibold'}
-                        color={'white'}>
-                        NEW!
-                      </Text>
-                    )}
-                    {item.featured && (
-                      <Text
-                        fontSize={'12px'}
-                        bgColor={'hsl(180, 14%, 20%)'}
-                        borderRadius={'full'}
-                        py={'0.8'}
-                        px={'1.5'}
-                        fontWeight={'semibold'}
-                        color={'white'}>
-                        FEATURED
-                      </Text>
-                    )}
+                    <Flex gap={2}>
+                      {item.new && (
+                        <Flex
+                          fontSize={'12px'}
+                          bgColor={'hsl(180, 29%, 50%)'}
+                          borderRadius={'2xl'}
+                          py={'0.8'}
+                          px={'1.5'}
+                          fontWeight={'semibold'}
+                          color={'white'}>
+                          NEW!
+                        </Flex>
+                      )}
+                      {item.featured && (
+                        <Text
+                          fontSize={'12px'}
+                          bgColor={'hsl(180, 14%, 20%)'}
+                          borderRadius={'full'}
+                          py={'0.8'}
+                          px={'1.5'}
+                          fontWeight={'semibold'}
+                          color={'white'}>
+                          FEATURED
+                        </Text>
+                      )}
+                    </Flex>
                   </Flex>
 
                   {/* Render to another page when the title is clicked by the user */}
